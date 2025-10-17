@@ -2,7 +2,7 @@
 
 namespace LaravelDtoMapper\Providers;
 
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use LaravelDtoMapper\Resolvers\DtoParameterBinder;
 
@@ -21,11 +21,6 @@ class DtoMapperServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Register the parameter binder
-        Route::bind('dto', function ($value, $route) {
-            return $this->app->make(DtoParameterBinder::class)->resolve($value, $route);
-        });
-
         // Hook into route matching to bind DTOs
         $this->app['router']->matched(function ($event) {
             $binder = $this->app->make(DtoParameterBinder::class);
