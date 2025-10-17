@@ -4,7 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/qbejs/laravel-dto-mapper/downloads)](https://packagist.org/packages/qbejs/laravel-dto-mapper)
 [![License](https://poser.pugx.org/qbejs/laravel-dto-mapper/license)](https://packagist.org/packages/qbejs/laravel-dto-mapper)
 [![PHP Version](https://img.shields.io/packagist/php-v/qbejs/laravel-dto-mapper)](https://packagist.org/packages/qbejs/laravel-dto-mapper)
-[![Update Packagist](https://github.com/qbejs/laravel-dto-mapper/actions/workflows/packagist.yml/badge.svg?branch=master)](https://github.com/qbejs/laravel-dto-mapper/actions/workflows/packagist.yml)
+[![Update Packagist](https://github.com/qbejs/laravel-dto-mapper/actions/workflows/packagist.yml/badge.svg)](https://github.com/qbejs/laravel-dto-mapper/actions/workflows/packagist.yml)
 
 Automatic HTTP request mapping to DTO classes in Laravel using **PHP 8 Attributes**. A simple, clean, and type-safe way to handle validation and data mapping in your controllers.
 
