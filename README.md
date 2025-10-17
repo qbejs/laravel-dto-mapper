@@ -1,6 +1,7 @@
 # 📦 Laravel DTO Mapper
 
 [![Latest Stable Version](https://poser.pugx.org/qbejs/laravel-dto-mapper/v/stable)](https://packagist.org/packages/qbejs/laravel-dto-mapper)
+[![Total Downloads](https://poser.pugx.org/qbejs/laravel-dto-mapper/downloads)](https://packagist.org/packages/qbejs/laravel-dto-mapper)
 [![License](https://poser.pugx.org/qbejs/laravel-dto-mapper/license)](https://packagist.org/packages/qbejs/laravel-dto-mapper)
 [![PHP Version](https://img.shields.io/packagist/php-v/qbejs/laravel-dto-mapper)](https://packagist.org/packages/qbejs/laravel-dto-mapper)
 
@@ -269,12 +270,6 @@ When validation fails, a 422 response is returned:
 }
 ```
 
-## 📖 Additional Documentation
-
-- 📘 [Troubleshooting Guide](TROUBLESHOOTING.md) - Common issues and solutions
-- 🏗️ [Project Structure](PROJECT_STRUCTURE.md) - Recommended project organization
-- 📝 [Examples](examples/) - Complete working examples
-
 ## 🧪 Testing
 
 ```php
@@ -391,6 +386,13 @@ public string $deviceId;  // Must match exactly!
 
 **Solution:** Remove the constructor. DTOs should only have public properties.
 
+## 🤝 Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## 📄 Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for recent changes.
 
 ## 📜 License
 
@@ -399,6 +401,7 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 ## 🙏 Credits
 
 - [Jakub Skowron](https://github.com/qbejs)
+- [All Contributors](../../contributors)
 
 ## 💬 Support
 
