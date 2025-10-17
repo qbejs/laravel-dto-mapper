@@ -2,9 +2,9 @@
 
 namespace LaravelDtoMapper\Providers;
 
-use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Routing\Route;
 use Illuminate\Support\ServiceProvider;
-use LaravelDtoMapper\Resolvers\DtoParameterResolver;
+use LaravelDtoMapper\Resolvers\DtoParameterBinder;
 
 class DtoMapperServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,7 @@ class DtoMapperServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(DtoParameterResolver::class);
+        $this->app->singleton(DtoParameterBinder::class);
     }
 
     /**
@@ -21,8 +21,15 @@ class DtoMapperServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Register the parameter resolver globally
-        $kernel = $this->app->make(Kernel::class);
-        $kernel->prependMiddleware(DtoParameterResolver::class);
+        // Register the parameter binder
+        Route::bind('dto', function ($value, $route) {
+            return $this->app->make(DtoParameterBinder::class)->resolve($value, $route);
+        });
+
+        // Hook into route matching to bind DTOs
+        $this->app['router']->matched(function ($event) {
+            $binder = $this->app->make(DtoParameterBinder::class);
+            $binder->bindDtos($event->route, $event->request);
+        });
     }
 }
