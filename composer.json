@@ -1,0 +1,49 @@
+{
+    "name": "qbejs/laravel-dto-mapper",
+    "description": "Automatic DTO mapping for Laravel using PHP 8 Attributes",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "dto",
+        "mapper",
+        "attributes",
+        "validation"
+    ],
+    "authors": [
+        {
+            "name": "Jakub Skowron",
+            "email": "jakub@skowron.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/validation": "^10.0|^11.0",
+        "illuminate/http": "^10.0|^11.0",
+        "illuminate/routing": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelDtoMapper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelDtoMapper\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelDtoMapper\\Providers\\DtoMapperServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
